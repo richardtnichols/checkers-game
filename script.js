@@ -18,36 +18,33 @@ function convertCPtoString(cM) {
 
 function doGame(playerMove, computerMove) {
   if (playerMove === 'rock') {
-    if (computerMove === 'rock') {
-      return 'Tie!'
-    }
-    if (computerMove === 'paper') {
-      return 'You lose!'
-    }
-    if (computerMove === 'scissors') {
-      return 'You win!'
-    }
-  }
-  else if (playerMove === 'paper') {
-    if (computerMove === 'rock') {
-      return 'You win!'
-    }
-    if (computerMove === 'paper') {
-      return 'Tie!'
-    }
-    if (computerMove === 'scissors') {
-      return 'You lose!'
+    switch (computerMove) {
+      case 'rock':
+        return 'Tie!'
+      case 'paper':
+        return 'You lose!'
+      case 'scissors':
+        return 'You win!'
     }
   }
-  else if (playerMove === 'scissors') {
-    if (computerMove === 'rock') {
-      return 'You lose!'
+  if (playerMove === 'paper') {
+    switch (computerMove) {
+      case 'rock':
+        return 'You win!'
+      case 'paper':
+        return 'Tie!'
+      case 'scissors':
+        return 'You lose!'
     }
-    if (computerMove === 'paper') {
-      return 'You win!'
-    }
-    if (computerMove === 'scissors') {
-      return 'Tie!'
+  }
+  if (playerMove === 'scissors') {
+    switch (computerMove) {
+      case 'rock':
+        return 'You lose!'
+      case 'paper':
+        return 'You win!'
+      case 'scissors':
+        return 'Tie!'
     }
   }
 }
