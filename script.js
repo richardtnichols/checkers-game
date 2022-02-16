@@ -20,37 +20,58 @@ function doGame(playerMove, computerMove) {
   if (playerMove === 'rock') {
     switch (computerMove) {
       case 'rock':
-        return 'Tie!'
+      ++tieCount  
+      return 'Tie!'
       case 'paper':
-        return 'You lose!'
+      ++computerScore  
+      return 'You lose!'
       case 'scissors':
-        return 'You win!'
+      ++playerScore  
+      return 'You win!'
     }
   }
   if (playerMove === 'paper') {
     switch (computerMove) {
       case 'rock':
-        return 'You win!'
+      ++playerScore  
+      return 'You win!'
       case 'paper':
-        return 'Tie!'
+      ++tieCount  
+      return 'Tie!'
       case 'scissors':
-        return 'You lose!'
+      ++computerScore  
+      return 'You lose!'
     }
   }
   if (playerMove === 'scissors') {
     switch (computerMove) {
       case 'rock':
-        return 'You lose!'
+      ++computerScore  
+      return 'You lose!'
       case 'paper':
-        return 'You win!'
+      ++playerScore  
+      return 'You win!'
       case 'scissors':
-        return 'Tie!'
+      ++tieCount  
+      return 'Tie!'
     }
   }
 }
 
-let playerMove = window.prompt("Please type \"rock\", \"paper\", or \"scissors.\"")
-let computerMove = convertCPtoString(parseInt(computerPlay(0, 3)))
+function getPlayerMove() {
+  return window.prompt("Please type \"rock\", \"paper\", or \"scissors.\"").toLowerCase()
+}
 
-console.log(`Computer played ${computerMove}`)
-console.log(doGame(playerMove, computerMove))
+let computerScore = 0
+let playerScore = 0
+let tieCount = 0
+
+for (var x = 0; x < 5; ++x) {
+  let playerMove = getPlayerMove()
+  let computerMove = convertCPtoString(parseInt(computerPlay(0, 3)))
+
+  console.log(`You played ${playerMove}`)
+  console.log(`Computer played ${computerMove}`)
+  console.log(doGame(playerMove, computerMove))
+  console.log(`The score is:\nPlayer: ${playerScore}\nComputer: ${computerScore}`)
+}
