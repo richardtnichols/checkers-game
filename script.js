@@ -5,14 +5,13 @@ function computerPlay(min, max) {
 }
 
 function convertCPtoString(cM) {
-  if (cM === 0) {
-    return 'rock'
-  }
-  else if (cM === 1) {
-    return 'paper'
-  }
-  else if (cM === 2) {
-    return 'scissors'
+  switch (cM) {
+    case (0):
+      return 'rock'
+    case (1):
+      return 'paper'
+    case (2):
+      return 'scissors'
   }
 }
 
