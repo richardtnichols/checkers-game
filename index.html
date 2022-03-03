@@ -5,21 +5,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/Users/richardnichols/Documents/repos/checkers-game/script.js" defer></script>
-  <title>Document</title>
+  <title>Rock, Paper, Scissors</title>
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/4144/4144475.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="screen">
-    <div id="titleButtonsAndScores">
-      <div id="scoresAndTitle">
-        <div id="computerScoreTotal">0</div>
-        <h1>Play!</h1>
-        <div id="playerScoreTotal">0</div>
-      </div>
-      <div id="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <div id="titleButtonsScoresAndOutcome">
+      <div id="titleButtonsAndScores">
+        <div id="scoresAndTitle">
+          <div id="computerScoreAndLabel">
+            <p id="computerScoreLabel">Computer Score</p>
+            <div id="computerScoreTotal">0</div>
+          </div>
+          <div id="titleAndTieCount">
+            <h1>Play!</h1>
+            <p id="tiesLabel">Ties</p>
+            <div id="tieCount">0</div>
+          </div>
+          <div id="playerScoreAndLabel">
+            <p id="playerScoreLabel">Player Score</p>
+            <div id="playerScoreTotal">0</div>
+          </div>
+        </div>
+        <div id="buttons">
+          <button id="rock">Rock</button>
+          <button id="paper">Paper</button>
+          <button id="scissors">Scissors</button>
+        </div>
       </div>
     </div>
   </div>
